@@ -8,6 +8,14 @@ packages:
   gitUsername: Karthik-V-IBM-10
   gitBranch: main
 services:
+- serviceName: project.siqa_1802.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:DBInsert
+  packages:
+  - name: SIQA_1802Project
+    version: "1.0"
+- serviceName: project.siqa_1802.integrations:SIQAAdapterFlow
+  packages:
+  - name: SIQA_1802Project
+    version: "1.0"
 - serviceName: project.siqa_1802.integrations:Sum
   packages:
   - name: SIQA_1802Project
