@@ -124,6 +124,22 @@ services:
   packages:
   - name: WmPublic
     version: 11.1.0.0.2035
+- serviceName: project.siqa_1802.integrations:tppfs
+  packages:
+  - name: SIQA_1802Project
+    version: "1.0"
+  - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: SSL_JDBC_Test
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+- serviceName: services:add3Ints
+  packages:
+  - name: TPP_services_in_FCS
+    version: "1.0"
 configurationVariables:
   jdbc.jdbcTestPool.waitingThread: "0"
   jdbc.jdbcTestPool.minConns: "0"
