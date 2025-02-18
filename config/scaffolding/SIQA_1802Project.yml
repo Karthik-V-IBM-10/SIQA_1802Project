@@ -20,6 +20,7 @@ packages:
   gitUsername: kvv
   gitBranch: main
 - name: JMS2waySSL
+  version: "1.0"
   gitServerName: SIQAPsur
   gitUrl: https://github.com/prabhakarsag
   gitUsername: prabhakarsag
@@ -30,6 +31,8 @@ services:
   - name: SIQA_1802Project
     version: "1.0"
   - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: JMS2waySSL
     version: "1.0"
   - name: SSL_JDBC_Test
     version: "1.0"
@@ -43,6 +46,8 @@ services:
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: WmJDBCAdapter
@@ -53,11 +58,35 @@ services:
   packages:
   - name: WmPublic
     version: 11.1.0.0.2035
+- serviceName: project.siqa_1802.integrations:JMS_JNDI_SSL
+  packages:
+  - name: SIQA_1802Project
+    version: "1.0"
+  - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
+  - name: SSL_JDBC_Test
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+- serviceName: publisher:publisher
+  packages:
+  - name: JMS2waySSL
+    version: "1.0"
+- serviceName: pub.jms:send
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2035
 - serviceName: project.siqa_1802.integrations:SIQAAdapterFlow
   packages:
   - name: SIQA_1802Project
     version: "1.0"
   - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: JMS2waySSL
     version: "1.0"
   - name: SSL_JDBC_Test
     version: "1.0"
@@ -70,6 +99,8 @@ services:
   - name: SIQA_1802Project
     version: "1.0"
   - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: JMS2waySSL
     version: "1.0"
   - name: SSL_JDBC_Test
     version: "1.0"
@@ -91,6 +122,8 @@ services:
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: WmJDBCAdapter
@@ -110,6 +143,8 @@ services:
   - name: SIQA_1802Project
     version: "1.0"
   - name: TPP_services_in_FCS
+    version: "1.0"
+  - name: JMS2waySSL
     version: "1.0"
   - name: SSL_JDBC_Test
     version: "1.0"
@@ -135,6 +170,8 @@ services:
     version: "1.0"
   - name: TPP_services_in_FCS
     version: "1.0"
+  - name: JMS2waySSL
+    version: "1.0"
   - name: SSL_JDBC_Test
     version: "1.0"
   - name: WmJDBCAdapter
@@ -148,15 +185,15 @@ services:
 configurationVariables:
   jdbc.jdbcTestPool.waitingThread: "0"
   jdbc.jdbcTestPool.minConns: "0"
-  jdbc.jdbcTestPool.snoopenabled: "false"
   jdbc.jdbcTestPool.expireTime: "60000"
   jdbc.jdbcTestPool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/jdbcTestPool.log;ddtdbg.ProtocolTraceShowTime=true
+  jdbc.jdbcTestPool.maxConns: "10"
+  jdbc.jdbcTestPool.userid: root
+  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
+  jdbc.jdbcTestPool.spyenabled: "false"
+  jdbc.jdbcTestPool.snoopenabled: "false"
   jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
   jdbc.jdbcTestPool.spyparms: SpyAttributes=(log=(file)logs/spy/jdbcTestPool.log;logTName=yes;timestamp=yes)
   jdbc.jdbcTestPool.dbURL: jdbc:mysql://mysql.test.local:3306/webm
   jdbc.jdbcTestPool.poolThreshold: "0"
-  jdbc.jdbcTestPool.maxConns: "10"
-  jdbc.jdbcTestPool.userid: root
-  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
   jdbc.jdbcTestPool.useSSL: "false"
-  jdbc.jdbcTestPool.spyenabled: "false"
